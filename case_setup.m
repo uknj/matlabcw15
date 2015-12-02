@@ -5,12 +5,12 @@ a = 1;
 b = 1;
 
 % Dimensions of overall plate, units in cm
-xtotal = 21 + b + 8 + (b/10) + 21;
-ytotal = 11 + a + 8 + (b/10) + 11;
+x_width = 21 + b + 8 + (b/10) + 21;
+y_width = 11 + a + 8 + (b/10) + 11;
 
 % Dimensions of square hole
-sq_blc = [22, 12];      % Co-ordinates of bottom left corner of square
-sq_trc = [30.1, 20.1];  % Co-ordinates of top right corner of square
+sq_blc = [21 + b, 11 + a];      % Co-ordinates of bottom left corner of square
+sq_trc = [21 + b + 8 + (b/10), 11 + a + 8 + (b/10)];  % Co-ordinates of top right corner of square
 hole_length = 8.1;      % cm
 hole_width = 8.1;       % cm
 
