@@ -7,7 +7,7 @@ a = 1;
 b = 1;
 
 % Temperature values
-bc = ones(3, 1);
+bc = ones(1, 3);
 
 bc(1) = 25 - b;
 bc(2) = 40 + a;
