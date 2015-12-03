@@ -11,10 +11,9 @@ x_width = 21 + b + 8 + (b/10) + 21;
 y_width = 11 + a + 8 + (b/10) + 11;
 
 % Dimensions of square hole
-sq_blc = [21 + b, 11 + a];      % Co-ordinates of bottom left corner of square
-sq_trc = [21 + b + 8 + (b/10), 11 + a + 8 + (b/10)];  % Co-ordinates of top right corner of square
-hole_length = 8.1;      % cm
-hole_width = 8.1;       % cm
+x_hole = 21 + b; % Lower left corner of hole x-value
+y_hole = 11 + a; % Lower left corner of hole y-value
+dim_h = 8.1; % cm
 
 % Initial nodal values for the x-axis and y-axis respectively
 ni = 0;
