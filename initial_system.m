@@ -1,7 +1,8 @@
 function [A,b] = initial_system(ni, nj, dx, dy, T_leftright, T_top)
-% create the computational matrix A x = b using FDM (CDS)
+% Create the computational matrix A x = b using FDM (CDS)
 %
 
+% Obtain the total number of nodes by multiplying
 n = ni * nj;
 
 A = zeros(n, n);
@@ -27,8 +28,8 @@ for i = 1:ni
             E = index(i+1, j);
             W = index(i-1, j);
             A(C, C) = -2*(1 / dx^2 + 1 / dy^2);
-            A(i, [N, S]) = 1 / dy^2;
-            A(i, [E, W]) = 1 / dx^2;
+            A(C, [N, S]) = 1 / dy^2;
+            A(C, [E, W]) = 1 / dx^2;
         end
     end
 end

@@ -19,7 +19,10 @@ dim_h = 8.1; % cm
 ni = 0;
 nj = 0;
 
-% Validate the data input to ensure it is a positive integer.
+% Validate the data input to ensure it is a positive integer. If it is
+% invalid (eg. a string, or a negative number which isn't possible, reject
+% and ask for values again.
+
 inValid = true;
 while inValid == true
     ni = input('Enter the number of i nodes (x-axis nodes) you require: ');
