@@ -15,13 +15,13 @@ c = b;
 % Use the previous grid_points.m function to get dx, dy and n.
 [dx, dy, n] = grid_points(x_width, y_width, ni, nj);
 
-% to convert from row and col to node based matrix
+% Convert from row and col to node based matrix
 index = reshape(1:n, nj, ni)';
 
 for i = 1:ni
     for j = 1:nj
-       C = index(i, j); % the index of the node at row i and col j
-       % if statement checking whether the nodes are in the region of the
+       C = index(i, j); % The index of the node at row i and col j
+       % If statement checking whether the nodes are in the region of the
        % hole points:
        % if (x nodes >= x hole and <= x hole + dim) and (y nodes >= y
        % hole and <= y hole + dim)
