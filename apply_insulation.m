@@ -26,6 +26,7 @@ for i = 1:ni
             M(C, C) = -(2 / dx^2 + 2 / dy^2);
             M(C, N) = 1 / dy^2;
             M(C, [E, W]) = 1 / dx^2;
+            c(C) = 0;
         end
     end
 end
