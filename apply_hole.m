@@ -27,7 +27,7 @@ for i = 1:ni
        % hole and <= y hole + dim)
        if (x_hole <= i * dx <= x_hole + dim_h) && (y_hole <= j * dy <= y_hole + dim_h)
            M(C, :) = 0;
-           M(C, C) = 1; % Set the matrix at C,C as one, and the rest of the row as 0.
+           M(C, C) = 1; % Set the M matrix at C,C as one, and the rest of the row as 0.
            c(C) = T_hole; % Set the b matrix to the temperature of the hole.
        end
     end

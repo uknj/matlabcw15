@@ -24,9 +24,9 @@ for i = 1:ni
             E = index(i+1, j);
             W = index(i-1, j); % Values to the top, left and right (respectively) of the point. South is not needed as it is on the south boundary.
             M(C, C) = -(2 / dx^2 + 2 / dy^2);
-            M(C, N) = 1 / dy^2;
+            M(C, N) = 2 * (1 / dy^2); % 2 * because of a mirror effect that occurs on  the boundary. 
             M(C, [E, W]) = 1 / dx^2;
-            c(C) = 0;
+            c(C) = 0; % Set temperatures on the bottom boundary to equal 0.
         end
     end
 end
