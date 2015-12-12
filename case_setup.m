@@ -1,5 +1,3 @@
-clear all; close all; clc;
-
 %Initialise the calculations and variables.
 
 % URN variables

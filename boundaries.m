@@ -1,11 +1,4 @@
-clear all; close all; clc;
-
 % Set the boundary conditions for the temperature of the 4 sided object.
-
-% URN variables
-a = 1;
-b = 1;
-
 % Temperature values
 bc = ones(1, 3);
 
@@ -34,3 +27,9 @@ while inValid == true
     disp('Invalid input. Ensure that the values for the boundary temperatures are real numbers! Please re-enter: ');
   end
 end
+
+% In order to match the calls for later functions, need to assign these
+% values to named variables.
+T_leftright = bc(1);
+T_top = bc(2);
+T_hole = bc(3);
