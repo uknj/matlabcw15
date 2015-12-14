@@ -5,7 +5,7 @@ function [M, c] = apply_hole(A,b,x_width,y_width,ni,nj,x_hole,y_hole,dim_h,T_hol
 % A is the initial matrix. b is the initial constant matrix. x_width and
 % y_width are the plate dimensions in x and y respectively. ni and nj are
 % the number of grid points in the x and y direction respectively.
-% x_hole and y_hole are the co-ordinates of the 
+% x_hole and y_hole are the co-ordinates of the hole.
 
 
 M = A;
@@ -25,7 +25,7 @@ for i = 1:ni
        % hole points:
        % if (x nodes >= x hole and <= x hole + dim) and (y nodes >= y
        % hole and <= y hole + dim)
-       if (x_hole <= i * dx <= x_hole + dim_h) && (y_hole <= j * dy <= y_hole + dim_h)
+       if ((i >= (x_hole + 1)/dx) && (i <= (x_hole + 1 + dim_h)/dx)) && ((j >= (y_hole + 1)/dy) && (j <= (y_hole + 1 + dim_h)/dy))
            M(C, :) = 0;
            M(C, C) = 1; % Set the M matrix at C,C as one, and the rest of the row as 0.
            c(C) = T_hole; % Set the b matrix to the temperature of the hole.

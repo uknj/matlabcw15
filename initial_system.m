@@ -23,10 +23,8 @@ for i = 1:ni
             b(C) = T_top;
         else % this is an interior node
             % indices for North, East, West and South
-            N = index(i, j+1);
-            S = index(i, j-1);
-            E = index(i+1, j);
-            W = index(i-1, j);
+            N = index(i, j+1); S = index(i, j-1);
+            E = index(i+1, j); W = index(i-1, j);
             A(C, C) = -2*(1 / dx^2 + 1 / dy^2);
             A(C, [N, S]) = 1 / dy^2;
             A(C, [E, W]) = 1 / dx^2;
