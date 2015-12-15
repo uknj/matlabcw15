@@ -16,12 +16,9 @@ while inValid == true
     bc(2) = input('Enter the temperature at the top boundary: ');
     bc(3) = input('Enter the temperature hole boundary: ');
   try
-    validateattributes(bc(1), {'numeric'}, ...
-                       {'scalar', 'real', 'finite'})
-    validateattributes(bc(2), {'numeric'}, ...
-                       {'scalar', 'real', 'finite'})
-    validateattributes(bc(3), {'numeric'}, ...
-                       {'scalar', 'real', 'finite'})
+    validateattributes(bc(1), {'numeric'}, {'scalar', 'real', 'finite'})
+    validateattributes(bc(2), {'numeric'}, {'scalar', 'real', 'finite'})
+    validateattributes(bc(3), {'numeric'}, {'scalar', 'real', 'finite'})
     inValid = false;
   catch
     disp('Invalid input. Ensure that the values for the boundary temperatures are real numbers! Please re-enter: ');

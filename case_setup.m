@@ -26,10 +26,8 @@ while inValid == true
     ni = input('Enter the number of i nodes (x-axis nodes) you require: ');
     nj = input('Enter the number of j nodes (y-axis nodes) you require: ');
   try
-    validateattributes(nj, {'numeric'}, ...
-                       {'scalar', 'integer', 'real', 'finite', 'positive'})
-    validateattributes(ni, {'numeric'}, ...
-                       {'scalar', 'integer', 'real', 'finite', 'positive'})
+    validateattributes(nj, {'numeric'}, {'scalar', 'integer', 'real', 'finite', 'positive'})
+    validateattributes(ni, {'numeric'}, {'scalar', 'integer', 'real', 'finite', 'positive'})
     inValid = false;
   catch
     disp('Invalid input. Ensure that the values for ni and nj are positive integers! Please re-enter: ');
