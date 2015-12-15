@@ -8,7 +8,7 @@ run('case_setup') % Run the case setup script.
 run('boundaries') % Run the boundaries script
 
 % Setup the initial System.
-[A,b] = initial_system(ni, nj, dx, dy, T_leftright, T_top);
+[A, b] = initial_system(ni, nj, dx, dy, T_leftright, T_top);
 
 % Apply the temperature at the hole to the initial system.
 [A, b] = apply_hole(A,b,x_width,y_width,ni,nj,x_hole,y_hole,dim_h,T_hole);
@@ -20,12 +20,16 @@ run('boundaries') % Run the boundaries script
 % capabilities.
 x = A\b;
 
-T = reshape(x, nj, ni)'; % reshape for plotting
-X = linspace(0, x_width, ni); % to convert from grid column to x
-Y = linspace(0, y_width, nj); % to convert from grid row to y
-hp = contourf(X,Y,T'); % create plot
-title('Temperatures on a thin plate');
-xlabel('x [cm]');
-ylabel('y [cm]');
-hc = colorbar;
-title(hc, 'T [{\circ}C]');
+
+% Time to plot the contour:
+T = reshape(x, nj, ni)'; % Reshape the values for plotting
+
+Y = linspace(0, y_width, nj); % Set the y_width as the y-axis
+X = linspace(0, x_width, ni); % Set the x_width as the x-axis
+
+temps = contourf(X,Y,T'); % Create plot of temperatures
+title('Temperatures'); % Title of the plot
+xlabel('x [cm]'); % X axis labelling
+ylabel('y [cm]'); % Y axis labelling
+temps = colorbar; % Adding a colourbar
+title(temps, 'T [{\circ}C]'); % Adding a title to the colourbar
