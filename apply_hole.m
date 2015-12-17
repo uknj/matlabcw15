@@ -23,8 +23,6 @@ for i = 1:ni
        C = index(i, j); % The index of the node at row i and col j
        % If statement checking whether the nodes are in the region of the
        % hole points:
-       % if (x nodes >= x hole and <= x hole + dim) and (y nodes >= y
-       % hole and <= y hole + dim)
        if ((i >= (x_hole + 1)/dx) && (i <= (x_hole + 1 + dim_h)/dx)) && ((j >= (y_hole + 1)/dy) && (j <= (y_hole + 1 + dim_h)/dy))
            M(C, :) = 0;
            M(C, C) = 1; % Set the M matrix at C,C as one, and the rest of the row as 0.

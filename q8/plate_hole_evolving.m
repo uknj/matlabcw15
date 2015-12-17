@@ -38,5 +38,26 @@ nn = size(t,2); % number of time steps
 % timestep.
 T = zeros(ni, nj, nn);
 
+% Set the temperatures on the boundaries at all values for nn.
+T(1, : , :) = T_leftright; % Set the left boundary temperature.
+T(ni, :, :) = T_leftright; % Set the right boundary temperature.
+T(:, nj, :) = T_top; % Set the top boundary temperature.
 
-% Need to 
+% Set the temperature of the other points to T_start
+T(2:(ni - 1), 2:(nj - 1), :) = T_start;
+
+% Set the temperature of the hole to T_hole.
+hx1 = floor((x_hole + 1)/dx);
+hx2 = ceil((x_hole + 1 + dim_h)/dx);
+hx3 = floor((y_hole + 1)/dy);
+hx4 = ceil((y_hole + 1 + dim_h)/dy);
+
+T(hx1:hx2, hx3:hx4, :) = T_hole;
+
+% % Now apply the derived equation
+% for n = 1:(nn - 1)
+%     for i = 1:(ni - 1)
+%         for j = 1:(nj - 1)
+%             
+
+% Didnt get this to work :(...
